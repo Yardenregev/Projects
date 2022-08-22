@@ -1,0 +1,58 @@
+
+
+/* The popup form - hidden by default */
+.login-page {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 1px solid #ccc;
+  /*make a thick shadow box*/
+  box-shadow: 0 0 150px rgba(0, 0, 0, 0.2);
+  z-index: 2;
+}
+
+/* Add styles to the form container */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  padding: 30px;
+}
+
+/* Full-width input fields */
+.login-form input[type=text], .login-form input[type=password] {
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+}
+
+/* When the inputs get focus, do something */
+.login-form input[type=text]:focus, .login-form input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Set a style for the submit/login button */
+.login-form .btn {
+  background-color: #04AA6D;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom:10px;
+  opacity: 0.8;
+}
+
+.close-icon{
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 12px;
+    cursor: pointer;
+}
