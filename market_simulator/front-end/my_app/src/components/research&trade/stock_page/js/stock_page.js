@@ -2,12 +2,13 @@ import React from "react";
 import BuyButton from "../../../general_components/js/buy_button"
 import SellButton from "../../../general_components/js/sell_button"
 import MoreInfoButton from "./more_info_button"
+import "../css/stock_page.css"
 
 function StockPage(props)
 {
     return(
         // every props should be given from server according to each stock
-        <div className="stock-page">
+        <div id="stock-page">
             <div className="stock-header">
                 {props.symbol}
                 {props.name}

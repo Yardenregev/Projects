@@ -35,6 +35,12 @@ function SearchBar(props) {
         setWordEntered(item);
         setFilteredData([]);
     }
+
+    const searchInput = ()=>{
+        console.log("this will display the StockPage component with the given item");
+        console.log(wordEntered)
+    }
+
   return (
     <div className="search-bar">
         <div className="search-input">
@@ -44,7 +50,7 @@ function SearchBar(props) {
                 filteredData.length > 0 ?
                  <CloseIcon id='clear-button'  onClick={clearInput}/>
                   : 
-                  <SearchIcon />
+                  <SearchIcon id='search-button' onClick={searchInput}/>
                   }
             </div>
         </div>
