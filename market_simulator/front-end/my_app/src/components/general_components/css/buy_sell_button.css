@@ -1,0 +1,12 @@
+.buy-sell-button{
+    color: white;
+	font-size: 40px;
+	text-shadow: -1px 1px 0 #000,
+				  1px 1px 0 #000,
+				 1px -1px 0 #000;
+}
+
+.buy-button{
+    background-color: rgba(172, 255, 47, 0.658)
+}
+

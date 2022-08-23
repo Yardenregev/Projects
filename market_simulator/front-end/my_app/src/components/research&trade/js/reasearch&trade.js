@@ -1,7 +1,8 @@
 import React from "react";  
-import SearchBar from "./search_bar";
+import SearchBar from "../search_bar/js/search_bar";
 import AppleIcon from '@mui/icons-material/Apple';
 import GoogleIcon from '@mui/icons-material/Google';
+import StockPage from "../stock_page/js/stock_page";
 
 function ResearchTradePage() {
   return (
@@ -24,6 +25,8 @@ function ResearchTradePage() {
               marketValue: "200$"
           }
       ]}/>
+
+      <StockPage />
     </div>
   );
 }
