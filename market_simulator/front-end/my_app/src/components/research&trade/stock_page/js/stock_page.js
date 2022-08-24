@@ -1,11 +1,15 @@
-import React from "react";
+import React, { Component } from "react";
 import BuyButton from "../../../general_components/js/buy_button"
 import SellButton from "../../../general_components/js/sell_button"
 import MoreInfoButton from "./more_info_button"
 import "../css/stock_page.css"
 
-function StockPage(props)
+class StockPage extends Component
 {
+
+
+    render()
+    {
 
         return(
             // every props should be given from server according to each stock
@@ -28,7 +32,7 @@ function StockPage(props)
                 </div>
             </div>
         )
- 
+    }
 }
 
 export default StockPage;
