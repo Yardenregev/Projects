@@ -6,27 +6,29 @@ import "../css/stock_page.css"
 
 function StockPage(props)
 {
-    return(
-        // every props should be given from server according to each stock
-        <div id="stock-page">
-            <div className="stock-header">
-                {props.symbol}
-                {props.name}
-                <BuyButton/>
-                <SellButton is_bought = {false}/>
-            </div>
-            <div className="stock-graph">
-            {props.graph}
-            </div>
 
-            <div className="stock-info">
-                {props.info}
-                <BuyButton/>
-                <SellButton is_bought = {true}/>
-                <MoreInfoButton symbol = {props.symbol}/>
+        return(
+            // every props should be given from server according to each stock
+            <div id="stock-page">
+                <div className="stock-header">
+                    {this.props.symbol}
+                    {this.props.name}
+                    <BuyButton/>
+                    <SellButton is_bought = {false}/>
+                </div>
+                <div className="stock-graph">
+                {this.props.graph}
+                </div>
+
+                <div className="stock-info">
+                    {this.props.info}
+                    <BuyButton/>
+                    <SellButton is_bought = {true}/>
+                    <MoreInfoButton symbol = {this.props.symbol}/>
+                </div>
             </div>
-        </div>
-    )
+        )
+ 
 }
 
 export default StockPage;

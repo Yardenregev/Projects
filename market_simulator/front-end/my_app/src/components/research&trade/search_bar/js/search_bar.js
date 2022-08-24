@@ -2,12 +2,11 @@ import React from "react";
 import '../css/search_bar.css';
 import SearchIcon from '@mui/icons-material/Search';
 import CloseIcon from '@mui/icons-material/Close';
-
 import {useState} from "react";
 function SearchBar(props) {
     const [filteredData, setFilteredData] = useState([]);
     const [wordEntered, setWordEntered] = useState('');
-
+    
     const handleFilter = (event) => {
         const entered_word = event.target.value;
         setWordEntered(entered_word);
@@ -37,8 +36,7 @@ function SearchBar(props) {
     }
 
     const searchInput = ()=>{
-        console.log("this will display the StockPage component with the given item");
-        console.log(wordEntered)
+        props.search_func(wordEntered);
     }
 
   return (
@@ -59,7 +57,7 @@ function SearchBar(props) {
         <div className="search-data-result">
             {filteredData.slice(0,15).map((item, index) => {
                 return (
-                    <div className="search-data-item" key={index} onClick={() => fillInput(item.name)}>
+                    <div className="search-data-item" key={index} onClick={() => fillInput(item.symbol)}>
                         {item.logo}
                         &ensp;
                         {item.name}
@@ -75,6 +73,7 @@ function SearchBar(props) {
         </div>
         )}
     </div>
+
   );
 }
 
