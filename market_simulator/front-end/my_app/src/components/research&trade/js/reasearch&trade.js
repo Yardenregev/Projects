@@ -9,19 +9,19 @@ class ResearchTradePage extends Component
   constructor (){
     super();
     this.state = {
-        searchTerm : ""
+        searchTerm : "",
+        s_p_visibility : "hidden"
     };
   }
 
+  
   handleSearch =  (searchItem) => {
-      this.setState({searchTerm : searchItem},() =>
-      {
-        // console.log(this.state.searchTerm);
-        const element = document.getElementById("stock-page");
-        element.style.visibility = "visible";
-      });
+    this.setState({searchTerm : searchItem},() =>
+    {
+      this.setState({s_p_visibility : "visible"},() => {})
+    });
   }
-
+  
   render()
   {
   return (
@@ -46,7 +46,9 @@ class ResearchTradePage extends Component
               marketValue: "200$"
           }
       ]}/>
-      <StockPage symbol = {this.state.searchTerm}
+      <StockPage
+                 visibility = {this.state.s_p_visibility}
+                 symbol = {this.state.searchTerm}
                  o_p_w_func = {this.props.o_p_w_func}
                  set_buy_func = {this.props.set_buy_func}
                  set_sell_func = {this.props.set_sell_func}

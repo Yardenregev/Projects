@@ -19,7 +19,7 @@ class StockPage extends Component
 
         return(
             // every props should be given from server according to each stock
-            <div id="stock-page">
+            <div id="stock-page" style= {{visibility : this.props.visibility}}>
                 <section className="stock-header-section">
                     
                     <div className="stock-header-section-item">
