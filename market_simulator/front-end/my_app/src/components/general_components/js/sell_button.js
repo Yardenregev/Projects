@@ -10,7 +10,9 @@ function SellButton(props)
     }
 
     return (
-        <button className="buy-sell-button sell-button button-component" style={{backgroundColor: color}}>
+        <button className="buy-sell-button sell-button button-component" 
+                style={{backgroundColor: color}}
+                onClick = {props.func}> 
             Sell
         </button>
     )

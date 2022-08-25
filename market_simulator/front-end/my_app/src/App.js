@@ -37,7 +37,7 @@ function App() {
             </Route>
 
             <Route exact path="/research&trade">
-              <ResearchTradePage/>
+              <ResearchTradePage o_p_w_func = {openPurchseWindow} />
             </Route>
 
           </Switch>
