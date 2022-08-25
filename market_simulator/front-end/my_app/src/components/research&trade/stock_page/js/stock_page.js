@@ -31,11 +31,19 @@ class StockPage extends Component
                     </div>
                     
                     <div className="stock-header-section-item">
-                        <BuyButton func = {this.props.o_p_w_func}/>
+                        <BuyButton func = {() =>
+                                                {
+                                                this.props.o_p_w_func();
+                                                this.props.set_buy_func();
+                                                }}/>
                     </div>
 
                     <div className="stock-header-section-item">
-                        <SellButton is_bought = {false} func = {this.props.o_p_w_func}/>
+                        <SellButton is_bought = {false} func = {() =>
+                                                {
+                                                this.props.o_p_w_func();
+                                                this.props.set_sell_func();
+                                                }}/>
                     </div>
                 </section>
 
@@ -49,9 +57,17 @@ class StockPage extends Component
                         {stock_details.info}
                     </div>
                     <div className="stock-info-buttons">
-                            <BuyButton func = {this.props.o_p_w_func}/>
+                            <BuyButton func = {() =>
+                                                {
+                                                this.props.o_p_w_func();
+                                                this.props.set_buy_func();
+                                                }}/>
 
-                            <SellButton is_bought = {true} func = {this.props.o_p_w_func}/> {/* should change according to user DB*/}
+                            <SellButton is_bought = {true} func = {() =>
+                                                {
+                                                this.props.o_p_w_func();
+                                                this.props.set_sell_func();
+                                                }}/> {/* should change according to user DB*/}
 
                             <MoreInfoButton symbol = {stock_details.symbol}/>
                     </div>

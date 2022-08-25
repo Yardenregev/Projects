@@ -46,7 +46,11 @@ class ResearchTradePage extends Component
               marketValue: "200$"
           }
       ]}/>
-      <StockPage symbol = {this.state.searchTerm} o_p_w_func = {this.props.o_p_w_func}/>  
+      <StockPage symbol = {this.state.searchTerm}
+                 o_p_w_func = {this.props.o_p_w_func}
+                 set_buy_func = {this.props.set_buy_func}
+                 set_sell_func = {this.props.set_sell_func}
+                 />  
     </div>
   );
 

@@ -18,8 +18,8 @@ const PurchaseWindow = (props) =>
         <div className='purchase-window' style={{width : props.width}}>
             <h1>Purchase</h1>
             <CloseIcon className="close-icon" onClick={props.close_func} />
-            <BuyButton/>
-            <SellButton/>
+            <BuyButton func = {props.set_buy_func}/>
+            <SellButton func = {props.set_sell_func}/>
             Stock: <input />
             Name: <input />
             {window}

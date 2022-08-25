@@ -9,15 +9,23 @@ import React, {useState} from "react";
 
 function App() {
 
-  const [wid, setWid] = useState("25%");
+  const [wid, setWid] = useState("0%");
   const [mode, setMode] = useState("buy");
-  const openPurchseWindow = ( ) => {
+  const openPurchseWindow = () => {
     setWid("25%");
  }
 
   const closePurchseWindow = ( ) => {
   setWid("0%");
 }
+
+  const sellMode = () =>{
+    setMode("sell");
+  }
+
+  const buyMode = () =>{
+    setMode("buy");
+  }
 
   
 
@@ -29,7 +37,12 @@ function App() {
             <Header />
         </header>
         <div className="page-content">
-          <PurchaseWindow close_func = {closePurchseWindow} width = {wid} symbol = "APPL"/>
+          <PurchaseWindow close_func = {closePurchseWindow}
+                          set_buy_func = {buyMode}
+                          set_sell_func = {sellMode}
+                          width = {wid}
+                          mode = {mode}
+                          symbol = "APPL"/>
           <LoginPage />
           <Switch>
             <Route exact path="/">
@@ -37,7 +50,10 @@ function App() {
             </Route>
 
             <Route exact path="/research&trade">
-              <ResearchTradePage o_p_w_func = {openPurchseWindow} />
+              <ResearchTradePage o_p_w_func = {openPurchseWindow}
+                                  set_buy_func = {buyMode}
+                                  set_sell_func = {sellMode}
+                                />
             </Route>
 
           </Switch>
