@@ -7,6 +7,7 @@ function BuyButton()
         <button className="buy-sell-button buy-button button-component">
             Buy
         </button>
+        
     )
 }
 

@@ -2,7 +2,7 @@ import ProtfolioHeader from './protfolio_header';
 import BalanceReportButton from './balance_report_button';
 import ChartOfStocks from './chart_of_stocks';
 import '../css/protfolio.css';
-function ProtfolioPage()
+function ProtfolioPage(props)
 {
     return(
     <div className="protfolio">
