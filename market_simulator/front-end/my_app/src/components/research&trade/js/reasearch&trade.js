@@ -36,7 +36,7 @@ class ResearchTradePage extends Component
           {
               name: "Apple",
               logo: <AppleIcon />,
-              symbol: "APPL",
+              symbol: "AAPL",
               marketValue: "100$"
           },
           {

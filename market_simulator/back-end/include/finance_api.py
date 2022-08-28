@@ -4,22 +4,43 @@ def GetStock(symbol):
     return yf.Ticker(symbol)
 
 def GetStockInfo(stock):
-    return stock.info
+    try:
+        return stock.info
+    except:
+        return "Null"
 
 def GetStockMarketPrice(stock):
-    return stock.info["regularMarketPrice"]
+    try:
+        return stock.info["regularMarketPrice"]
+    except:
+        return "Null"
 
 def GetStockSector(stock):
-    return stock.info["sector"]
+    try:
+        return stock.info["sector"]
+    except:
+        return "Null"
 
 def GetLongBussinessSummary(stock):
-    return stock.info["longBusinessSummary"]
+    try:
+        return stock.info["longBusinessSummary"]
+    except:
+        return "Null"
 
 def GetStockShortName(stock):
-    return stock.info["shortName"]
+    try:
+        return stock.info["shortName"]
+    except:
+        return "Null"
 
 def GetStockLongName(stock):
-    return stock.info["longName"]
+    try:
+        return stock.info["longName"]
+    except:
+        return "Null"
 
 def GetStockLogoUrl(stock):
-    return stock.info["logo_url"]
+    try:
+        return stock.info["logo_url"]
+    except:
+        return "Null"
