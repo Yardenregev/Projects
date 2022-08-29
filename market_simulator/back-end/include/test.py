@@ -2,7 +2,7 @@ import json
 from finance_api import *
 
 if __name__ == "__main__":
-    msft = GetStock("MSFT")
+    msft = GetStock("V")
     stock_profile = {}
     stock_profile["name"] = GetStockShortName(msft)
     stock_profile["market price"] = GetStockMarketPrice(msft)

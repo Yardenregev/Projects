@@ -1,14 +1,14 @@
-from finance_api import *
+from . import finance_api as f
 
 def StockPageJSON(symbol) -> dict:
-    stock = GetStock(symbol)
+    stock = f.GetStock(symbol)
 
     bundle = {}
-    bundle["name"] = GetStockShortName(stock)
-    bundle["summary"] = GetLongBussinessSummary(stock)
-    bundle["logo-url"] = GetStockLogoUrl(stock)
-    bundle["market-price"] = GetStockMarketPrice(stock)
-    bundle["sector"] = GetStockSector(stock)
+    bundle["name"] = f.GetStockShortName(stock)
+    bundle["summary"] = f.GetLongBussinessSummary(stock)
+    bundle["logo-url"] = f.GetStockLogoUrl(stock)
+    bundle["market-price"] = f.GetStockMarketPrice(stock)
+    bundle["sector"] = f.GetStockSector(stock)
 
     return bundle
 

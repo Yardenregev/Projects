@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import JsonResponse
 
 import sys
 import os
@@ -20,5 +20,9 @@ sys.path.append(parent)
 # directory.
 from include import responses_api as rs
 
-def StockPageReq(request):
-    return request.path
+def StockPageAction(request):
+    req_arr = request.path.split('/')
+    symbol = req_arr[2]
+
+    return  JsonResponse(rs.StockPageJSON(symbol))
+

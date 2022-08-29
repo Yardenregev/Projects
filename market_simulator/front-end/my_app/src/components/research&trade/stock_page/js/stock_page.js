@@ -5,13 +5,18 @@ import MoreInfoButton from "./more_info_button"
 import "../css/stock_page.css"
 
 const axios = require('axios')
-const url = "http://localhost:3000/stock/"
+const url = "http://127.0.0.1:8000/stock/"
 function getRequest(symbol)
 {
+    if(symbol === "")
+    {
+        return
+    }
+
     console.log("Get")
 
         axios.get(`${url}${symbol}/`)
-        .then(res => console.log(res))
+        .then(res => console.log(res.data))
         .catch(function(){
             console.log(`No response from symbol ${symbol}`)
         })
