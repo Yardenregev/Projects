@@ -13,20 +13,21 @@ class StockPage extends Component
         // const stock_details = getStockDetailsFromAPI(this.props.symbol)
         // fill in everything according to stock details
         const stock_details = {
-            symbol : this.props.symbol,
-            // name : "Google",
+            logo : this.props.stock_details.logo_url,
+            symbol : this.props.symbol.toUpperCase(),
             graph : "hello I'm graph",
-            // info : "yes, Google is a company"
             name : this.props.stock_details.name,
             info : this.props.stock_details.summary
         }
-
 
         return(
             // every props should be given from server according to each stock
             <div id="stock-page" style= {{visibility : this.props.visibility}}>
                 <section className="stock-header-section">
-                    
+                    <div className="stock-header-section-item">
+                      <img src={stock_details.logo} alt="logo"/>
+                    </div>
+
                     <div className="stock-header-section-item">
                       {stock_details.symbol}
                     </div>

@@ -6,7 +6,7 @@ def StockPageJSON(symbol) -> dict:
     bundle = {}
     bundle["name"] = f.GetStockShortName(stock)
     bundle["summary"] = f.GetLongBussinessSummary(stock)
-    bundle["logo-url"] = f.GetStockLogoUrl(stock)
+    bundle["logo_url"] = f.GetStockLogoUrl(stock)
     bundle["market-price"] = f.GetStockMarketPrice(stock)
     bundle["sector"] = f.GetStockSector(stock)
 
