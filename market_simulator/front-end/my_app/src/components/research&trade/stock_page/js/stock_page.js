@@ -39,6 +39,7 @@ class StockPage extends Component
                     <div className="stock-header-section-item">
                         <BuyButton func = {() =>
                                                 {
+                                                this.props.set_purchased_stock_func(stock_details.symbol)
                                                 this.props.o_p_w_func();
                                                 this.props.set_buy_func();
                                                 }}/>
@@ -47,6 +48,7 @@ class StockPage extends Component
                     <div className="stock-header-section-item">
                         <SellButton is_bought = {false} func = {() =>
                                                 {
+                                                this.props.set_purchased_stock_func(stock_details.symbol)
                                                 this.props.o_p_w_func();
                                                 this.props.set_sell_func();
                                                 }}/>
@@ -65,12 +67,14 @@ class StockPage extends Component
                     <div className="stock-info-buttons">
                             <BuyButton func = {() =>
                                                 {
+                                                this.props.set_purchased_stock_func(stock_details.symbol);
                                                 this.props.o_p_w_func();
                                                 this.props.set_buy_func();
                                                 }}/>
 
                             <SellButton is_bought = {true} func = {() =>
                                                 {
+                                                this.props.set_purchased_stock_func(stock_details.symbol);
                                                 this.props.o_p_w_func();
                                                 this.props.set_sell_func();
                                                 }}/> {/* should change according to user DB*/}

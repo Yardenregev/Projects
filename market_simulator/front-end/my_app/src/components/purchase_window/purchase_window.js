@@ -20,8 +20,7 @@ const PurchaseWindow = (props) =>
             <CloseIcon className="close-icon" onClick={props.close_func} />
             <BuyButton func = {props.set_buy_func}/>
             <SellButton func = {props.set_sell_func}/>
-            Stock: <input />
-            Name: <input />
+            Stock: <input type = "text" defaultValue={props.stock}/>
             {window}
             <button>Submit!</button>
         </div>

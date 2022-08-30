@@ -11,6 +11,7 @@ function App() {
 
   const [wid, setWid] = useState("0%");
   const [mode, setMode] = useState("buy");
+  const [purchased_stock, setPurchasedStock] = useState("")
   const openPurchseWindow = () => {
     setWid("25%");
  }
@@ -19,14 +20,17 @@ function App() {
   setWid("0%");
 }
 
-  const sellMode = () =>{
-    setMode("sell");
-  }
+const sellMode = () =>{
+  setMode("sell");
+}
 
-  const buyMode = () =>{
-    setMode("buy");
-  }
+const buyMode = () =>{
+  setMode("buy");
+}
 
+const assignStockForPurchase = (stock) =>{
+  setPurchasedStock(stock)
+}
   
 
 
@@ -38,6 +42,7 @@ function App() {
         </header>
         <div className="page-content">
           <PurchaseWindow close_func = {closePurchseWindow}
+                          stock = {purchased_stock}
                           set_buy_func = {buyMode}
                           set_sell_func = {sellMode}
                           width = {wid}
@@ -53,6 +58,7 @@ function App() {
               <ResearchTradePage o_p_w_func = {openPurchseWindow}
                                   set_buy_func = {buyMode}
                                   set_sell_func = {sellMode}
+                                  set_purchased_stock_func = {assignStockForPurchase}
                                 />
             </Route>
 
