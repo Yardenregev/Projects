@@ -20,9 +20,6 @@ sys.path.append(parent)
 # directory.
 from include import responses_api as rs
 
-def StockPageAction(request):
-    req_arr = request.path.split('/')
-    symbol = req_arr[2]
-
-    return  JsonResponse(rs.StockPageJSON(symbol))
+def StockPageAction(request, stockname):
+    return  JsonResponse(rs.StockPageJSON(stockname))
 
