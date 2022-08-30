@@ -4,26 +4,10 @@ import SellButton from "../../../general_components/js/sell_button"
 import MoreInfoButton from "./more_info_button"
 import "../css/stock_page.css"
 
-const axios = require('axios')
-const url = "http://127.0.0.1:8000/stock/"
-function getRequest(symbol)
-{
-    if(symbol === "")
-    {
-        return
-    }
-
-    console.log("Get")
-
-        axios.get(`${url}${symbol}/`)
-        .then(res => console.log(res.data))
-        .catch(function(){
-            console.log(`No response from symbol ${symbol}`)
-        })
-}
 
 class StockPage extends Component
 {
+
     render()
     {
         // const stock_details = getStockDetailsFromAPI(this.props.symbol)
@@ -35,7 +19,6 @@ class StockPage extends Component
             info : "yes, Google is a company"
         }
 
-        getRequest(this.props.symbol)
 
         return(
             // every props should be given from server according to each stock
