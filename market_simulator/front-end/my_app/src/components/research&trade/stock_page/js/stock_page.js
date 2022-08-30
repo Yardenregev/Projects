@@ -14,9 +14,11 @@ class StockPage extends Component
         // fill in everything according to stock details
         const stock_details = {
             symbol : this.props.symbol,
-            name : "Google",
+            // name : "Google",
             graph : "hello I'm graph",
-            info : "yes, Google is a company"
+            // info : "yes, Google is a company"
+            name : this.props.stock_details.name,
+            info : this.props.stock_details.summary
         }
 
 

@@ -15,10 +15,12 @@ function getStockDetails(symbol)
 
     console.log("Get")
 
-        return axios.get(`${url}${symbol}/`)
-        .then(
-              res => console.log(res.data)
-             )
+      return axios.get(`${url}${symbol}/`)
+        // .then(
+        //       res => {
+        //         console.log(res.data);
+        //       }
+        //      )
         .catch(function(){
             console.log(`No response from symbol ${symbol}`)
         })
@@ -37,13 +39,13 @@ class ResearchTradePage extends Component
   }
 
   
-  handleSearch =  (searchItem) => {
-    this.setState({searchTerm : searchItem},async () =>
-    {
-      const response = await getStockDetails(this.state.searchTerm)
-      console.log(response)
+  handleSearch = async (searchItem) => {
+      const response = await getStockDetails(searchItem);
+      this.setState({searchTerm : searchItem}, () =>{})
+      let data = response.data;
+      console.log(data)
+      this.setState({stock_details:data});
       this.setState({s_p_visibility : "visible"},() => {})
-    });
   }
   
   render()
