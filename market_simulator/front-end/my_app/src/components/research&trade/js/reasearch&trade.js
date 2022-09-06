@@ -30,7 +30,8 @@ class ResearchTradePage extends Component
         searchTerm : "",
         stock_page_visibility : "hidden",
         progress_sign_display : "none",
-        stock_details : {}
+        stock_profile : {},
+        stock_summary : {}
     };
   }
 
@@ -47,7 +48,9 @@ class ResearchTradePage extends Component
           this.setState({progress_sign_display:"none"})
           return
       }
-      this.setState({stock_details:data});
+      // console.log(data)
+      this.setState({stock_profile:data.profile});
+      this.setState({stock_summary:data.summary});
       this.setState({progress_sign_display:"none"})
       this.setState({stock_page_visibility : "visible"})
   }
@@ -81,7 +84,8 @@ class ResearchTradePage extends Component
 
       <StockPage
                  visibility = {this.state.stock_page_visibility}
-                 stock_details = {this.state.stock_details}
+                 stock_profile = {this.state.stock_profile}
+                 stock_summary = {this.state.stock_summary}
                  symbol = {this.state.searchTerm}
                  o_p_w_func = {this.props.o_p_w_func}
                  set_buy_func = {this.props.set_buy_func}

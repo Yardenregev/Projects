@@ -9,38 +9,82 @@ def GetStockInfo(stock):
     except:
         return "Null"
 
-def GetStockMarketPrice(stock):
+def GetInfoKey(stock,key):
     try:
-        return stock.info["regularMarketPrice"]
+        return stock.info[key]
     except:
         return "Null"
+
+def GetStockMarketPrice(stock):
+    return GetInfoKey(stock,"regularMarketPrice")
 
 def GetStockSector(stock):
-    try:
-        return stock.info["sector"]
-    except:
-        return "Null"
+    return GetInfoKey(stock,"sector")
+
 
 def GetLongBussinessSummary(stock):
-    try:
-        return stock.info["longBusinessSummary"]
-    except:
-        return "Null"
+    return GetInfoKey(stock,"longBusinessSummary")
+
+    
 
 def GetStockShortName(stock):
-    try:
-        return stock.info["shortName"]
-    except:
-        return "Null"
+    return GetInfoKey(stock,"shortName")
 
 def GetStockLongName(stock):
-    try:
-        return stock.info["longName"]
-    except:
-        return "Null"
+    return GetInfoKey(stock,"longName")
+
 
 def GetStockLogoUrl(stock):
-    try:
-        return stock.info["logo_url"]
-    except:
-        return "Null"
+    return GetInfoKey(stock,"logo_url")
+
+
+def GetPreviousClose(stock):
+    return GetInfoKey(stock,"regularMarketPreviousClose")
+
+
+def GetOpen(stock):
+    return GetInfoKey(stock,"open")
+
+
+def GetBid(stock):
+    return GetInfoKey(stock,"bid")
+
+def GetAsk(stock):
+    return GetInfoKey(stock,"ask")
+
+
+def GetDaysRange(stock):
+    pass
+
+def GetYearRange(stock):
+    pass
+
+def GetVolume(stock):
+    return GetInfoKey(stock,"volume")
+
+def GetAverageVolume(stock):
+    return GetInfoKey(stock,"averageVolume")
+
+def GetMarketCap(stock):
+    return GetInfoKey(stock,"marketCap")
+
+def GetBeta(stock):
+    return GetInfoKey(stock,"beta")
+
+def GetEPS(stock):
+    pass
+
+def GetPERatio(stock):
+    pass
+
+def GetEarningsDate(stock):
+    pass
+
+def GetDividendYield(stock):
+    return GetInfoKey(stock,"dividendYield")
+
+def GetExDividendDate(stock):
+    return GetInfoKey(stock,"exDividendDate")
+
+def GetYearTargetEstimate(stock):
+    pass
